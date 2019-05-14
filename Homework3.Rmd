@@ -1,0 +1,60 @@
+---
+title: "Homework 3"
+author: "Kelly Odion, Anna Calle"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Part 0. load packages and csv
+```{r}
+library(tidyverse)
+
+votes <- read_csv("HW3Data.csv")
+
+```
+
+
+Part 1. Linear probability model 
+1. Create a linear probability model that predicts a respondent’s probability of voting ‘yes’ on the
+ballot based on their age, income, NEP score, the risk reduction offered by the program, and the
+cost of the program to that respondent. Show the model and interpret the regression
+coefficients.
+```{r}
+probability_yes <- glm(vote ~ age + income + NEP + bid + risk, family = "binomial", data = votes)
+
+summary(probability_yes) 
+
+```
+
+2. Based on this regression, what can you say about the value of a single prevented whale death?
+(Hint: Think about how risk reduction for all whales translates into the number of whale deaths
+avoided)
+
+For 100% increase in risk reduction, people are .4% more likely to vote yes
+
+Risk reduction = 100% 
+
+Cost of implementation: $7 million
+
+3. Pick three arbitrary respondents. For each of those respondents, estimate their WTP for a VSR
+program offering 60% risk reduction.
+
+Respondent 1: 
+Risk = 20, Bid = 80, Vote = 0, NEP = 15; 
+
+Repondent 2: 
+Risk = 40, Bid = 100, vote = 1, NEP = 15; 
+ 
+Respondent 3: 
+Risk = 80, Bid = 40, vote = 1, NEP = 32;
+
+
+4. Now repeat this process and estimate the mean WTP for a VSR program offering 60% risk
+reduction among Santa Barbara County households.
+5. If there are 150,000 households in Santa Barbara County, estimate the total benefit of a VSR
+program to these households.
+6. Based only on these benefits, do the benefits of the VSR program outweigh the costs?
