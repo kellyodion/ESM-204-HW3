@@ -93,7 +93,7 @@ answer
 
 ```
 
-The value of a single prevented whale death is $2.78  
+*The value of a single prevented whale death is $2.78*
 
 
 3. Pick three arbitrary respondents. For each of those respondents, estimate their WTP for a VSR
@@ -170,8 +170,7 @@ benefit
 
 6. Based only on these benefits, do the benefits of the VSR program outweigh the costs?
 
-*The benefits of the VSR program do not outweigh the costs* 
-
+*The benefits of the VSR program do outweigh the costs* 
 
 When a container ship reduces its speed, it not only reduces the risk of colliding with a whale but also
 emits less carbon per distance traveled. For this reason, the WhaleStrikes Group Project recommended
@@ -185,19 +184,18 @@ speed, then the $7 million cost (noted above) of implementing the VSR would be a
 
 *1000/20 = $50 per ton in order to make the shipping industry adopt the speed reduction policy* 
 
-
 8. Now suppose the carbon credit price is exactly Z*, so all ships voluntarily reduce speed to
 achieve the 60% risk reduction. Approximately how many whales would be saved by this? What
 would be the social value of allowing ships to enter the carbon trading market?
 
-15 whales would be saved by this 
+*15 whales would be saved by this* 
 
 *Total benefit of 60% risk reduction = $9,675,000* 
 
 Additionally, 20 fewer tons of CO2 will be emitted for each ship that crosses the channel 
 
-1. Are we given number of ships?
-2. 
+1. Are we given number of ships? or is the societal benefit only the reduction in whale deaths because the costs of reducing speed exactly outweighs the benefits? 
+
 
 
 
