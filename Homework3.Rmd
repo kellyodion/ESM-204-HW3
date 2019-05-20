@@ -160,13 +160,13 @@ program to these households.
 
 #each death is worth $2.78 
 
-benefit <- (2.78 * 15) * 150000
+benefit <- 64.5 * 150000
 
 benefit
 
 ```
 
-*$6,255,000*
+*$9,675,000*
 
 6. Based only on these benefits, do the benefits of the VSR program outweigh the costs?
 
@@ -192,12 +192,12 @@ would be the social value of allowing ships to enter the carbon trading market?
 
 15 whales would be saved by this 
 
-*Total benefit of 60% risk reduction = $6,255,000* 
+*Total benefit of 60% risk reduction = $9,675,000* 
 
 Additionally, 20 fewer tons of CO2 will be emitted for each ship that crosses the channel 
 
-_Are we given number of ships?_ 
-
+1. Are we given number of ships?
+2. 
 
 
 
