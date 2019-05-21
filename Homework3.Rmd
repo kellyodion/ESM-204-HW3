@@ -31,7 +31,7 @@ summary(probability_yes)
 ```
 
 ```{r}
-# name variables for later use
+# name the linear model variables for later use
 
 intercept <- probability_yes$coefficients[1]
 
@@ -67,7 +67,7 @@ avoided)
 
 
 ```{r}
-#take average of each column 
+#take average of each column to use in calculating the expected 'bid' for one whale death 
 
 avg_vote <- mean(votes$vote) #Average vote is 0.714 (approx 70% chance of voting yes)
 
