@@ -90,10 +90,10 @@ avg_bid <- mean(votes$bid)
 # 4% risk reduction = 1 avoided death
 #solve for bid for 0% risk reduction and 4% risk reduction (0 deaths to 1 death) and look at the difference
 
-zero <- - (intercept + agetofifty + agetoforty + agetosixty + agetothirty + incomeone_percent + incomepoor + incomerich + incomevery_rich + (NEP *avg_NEP) +(risk*0) - avg_vote)/bid
+zero <- - (intercept + agetothirty + incomeone_percent + (NEP *avg_NEP) +(risk*0) - avg_vote)/bid
 
 
-four <- - (intercept + agetofifty + agetoforty + agetosixty + agetothirty + incomeone_percent + incomepoor + incomerich +incomevery_rich + (NEP * avg_NEP) + (risk*4) - avg_vote)/bid
+four <- - (intercept + agetothirty + incomeone_percent + (NEP * avg_NEP) + (risk*4) - avg_vote)/bid
 
 answer <- four - zero
 
@@ -151,7 +151,7 @@ reduction among Santa Barbara County households.
 ```{r}
 # mean WTP for 60% 
 
-mean_wtp <- (intercept + agetofifty + (NEP * avg_NEP) + (risk*60) - avg_vote)/-bid
+mean_wtp <- (intercept + agetothirty + incomeone_percent + (NEP * avg_NEP) + (risk*60) - avg_vote)/-bid
 
 mean_wtp
 
@@ -169,13 +169,13 @@ program to these households.
 
 #each death is worth $2.78 
 
-benefit <- 64.5 * 150000
+benefit <- 82.5 * 150000
 
 benefit
 
 ```
 
-*$9,675,000*
+*$12,375,000*
 
 6. Based only on these benefits, do the benefits of the VSR program outweigh the costs?
 
@@ -199,7 +199,7 @@ would be the social value of allowing ships to enter the carbon trading market?
 
 *15 whales would be saved by this* 
 
-*Total benefit of 60% risk reduction = $9,675,000* 
+*Total benefit of 60% risk reduction = $12,375,000* 
 
 Additionally, 20 fewer tons of CO2 will be emitted for each ship that crosses the channel 
 
