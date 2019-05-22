@@ -129,14 +129,19 @@ $(document).ready(function () {
 
 <p>Part 0. load packages and csv</p>
 <pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## ── Attaching packages ──────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
-<pre><code>## ✔ ggplot2 3.1.0     ✔ purrr   0.2.5
-## ✔ tibble  2.0.1     ✔ dplyr   0.7.6
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
+<pre><code>## ✔ ggplot2 3.0.0     ✔ purrr   0.2.5
+## ✔ tibble  1.4.2     ✔ dplyr   0.7.6
 ## ✔ tidyr   0.8.1     ✔ stringr 1.3.1
 ## ✔ readr   1.1.1     ✔ forcats 0.3.0</code></pre>
-<pre><code>## ── Conflicts ─────────────────────────────────────────────────── tidyverse_conflicts() ──
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(stargazer)</code></pre>
+<pre><code>## 
+## Please cite as:</code></pre>
+<pre><code>##  Hlavac, Marek (2018). stargazer: Well-Formatted Regression and Summary Statistics Tables.</code></pre>
+<pre><code>##  R package version 5.2.2. https://CRAN.R-project.org/package=stargazer</code></pre>
 <pre class="r"><code>votes &lt;- read_csv(&quot;HW3Data.csv&quot;)</code></pre>
 <pre><code>## Parsed with column specification:
 ## cols(
@@ -179,7 +184,347 @@ summary(probability_yes)</code></pre>
 ## Residual standard error: 0.4291 on 488 degrees of freedom
 ## Multiple R-squared:  0.1201, Adjusted R-squared:  0.1003 
 ## F-statistic: 6.055 on 11 and 488 DF,  p-value: 2.549e-09</code></pre>
-<pre class="r"><code># name variables for later use
+<p>stargazer table</p>
+<pre class="r"><code>stargazer_lm &lt;- stargazer(probability_yes, type = &quot;html&quot;)</code></pre>
+<table style="text-align:center">
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+vote
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+agetofifty
+</td>
+<td>
+0.010
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.063)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+agetoforty
+</td>
+<td>
+-0.020
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.062)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+agetosixty
+</td>
+<td>
+-0.016
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.060)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+agetothirty
+</td>
+<td>
+0.020
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.058)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+incomeone_percent
+</td>
+<td>
+0.009
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.060)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+incomepoor
+</td>
+<td>
+0.003
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.065)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+incomerich
+</td>
+<td>
+0.007
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.068)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+incomevery_rich
+</td>
+<td>
+0.047
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.067)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+NEP
+</td>
+<td>
+0.016<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.002)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+bid
+</td>
+<td>
+-0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+risk
+</td>
+<td>
+0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.001)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+0.120
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.120)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+500
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.120
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.100
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+0.429 (df = 488)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+6.055<sup>***</sup> (df = 11; 488)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+<pre class="r"><code># name the linear model variables for later use
 
 intercept &lt;- probability_yes$coefficients[1]
 
@@ -204,11 +549,11 @@ NEP &lt;- probability_yes$coefficients[10]
 bid &lt;- probability_yes$coefficients[11]
 
 risk &lt;- probability_yes$coefficients[12]</code></pre>
-<p>Linear probability model that predicting respondent’s probability of voting ‘yes’: <span class="math display">\[Probability(Voting~yes) = 0.12 + 0.02(Age~to~thirty) + -0.02(Age~to~forty) + 0.01(Age~to~fifty) + -0.016(Age~to~sixty) + 0.009(Income~one~percent) + 0.007(Income~rich) + 0.047(Income~very~rich) + 0.016(NEP) + -0.001(Bid) + 0.001(Risk~reduction)\]</span></p>
+<p>Linear probability model that predicting respondent’s probability of voting ‘yes’: <span class="math inline">\(Probability(Voting~yes) = 0.12 + 0.02(Age~to~thirty) + -0.02(Age~to~forty) + 0.01(Age~to~fifty) + -0.016(Age~to~sixty) + 0.009(Income~one~percent) + 0.007(Income~rich) + 0.047(Income~very~rich) + 0.016(NEP) + -0.001(Bid) + 0.001(Risk~reduction)\)</span></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Based on this regression, what can you say about the value of a single prevented whale death? (Hint: Think about how risk reduction for all whales translates into the number of whale deaths avoided)</li>
 </ol>
-<pre class="r"><code>#take average of each column 
+<pre class="r"><code>#take average of each column to use in calculating the expected 'bid' for one whale death 
 
 avg_vote &lt;- mean(votes$vote) #Average vote is 0.714 (approx 70% chance of voting yes)
 

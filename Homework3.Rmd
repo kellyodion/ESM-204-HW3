@@ -12,6 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Part 0. load packages and csv
 ```{r}
 library(tidyverse)
+library(stargazer)
 
 votes <- read_csv("HW3Data.csv")
 
@@ -29,6 +30,13 @@ probability_yes <- lm(vote ~ age + income + NEP + bid + risk, data = votes)
 summary(probability_yes)
 
 ```
+
+
+stargazer table 
+```{r stargazer, results = 'asis'}
+stargazer_lm <- stargazer(probability_yes, type = "html")
+```
+
 
 ```{r}
 # name the linear model variables for later use
