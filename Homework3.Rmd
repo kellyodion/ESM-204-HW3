@@ -157,8 +157,11 @@ mean_wtp
 
 ```
 
-*The mean willingness to pay for a VSR program offering a 60% risk reduction is $64.47* 
-
+*The mean willingness to pay for a VSR program offering a 60% risk reduction is $64.47*
+  
+$Mean~WTP = \frac{`r round(intercept, digits = 3)` + Age~to~thirty + Income~one~percent + (NEP \times Average~NEP) + (Risk~reduction \times 60) - Average~vote}{Bid}$
+  
+$Mean~WTP =\frac{`r round(intercept, digits = 3)` + `r round(agetothirty, digits = 3)` + `r round(incomeone_percent, digits = 3)` + (`r round(NEP, digits = 3)` \times `r round(avg_NEP, digits = 3)`) + (`r round(risk, digits = 3)` \times 60) - `r round(avg_vote, digits = 3)`}{- `r round(bid, digits = 3)`}$
 
 5. If there are 150,000 households in Santa Barbara County, estimate the total benefit of a VSR
 program to these households.
