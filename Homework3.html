@@ -129,12 +129,12 @@ $(document).ready(function () {
 
 <p>Part 0. load packages and csv</p>
 <pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
-<pre><code>## ✔ ggplot2 3.0.0     ✔ purrr   0.2.5
-## ✔ tibble  1.4.2     ✔ dplyr   0.7.6
+<pre><code>## ── Attaching packages ──────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
+<pre><code>## ✔ ggplot2 3.1.0     ✔ purrr   0.2.5
+## ✔ tibble  2.0.1     ✔ dplyr   0.7.6
 ## ✔ tidyr   0.8.1     ✔ stringr 1.3.1
 ## ✔ readr   1.1.1     ✔ forcats 0.3.0</code></pre>
-<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+<pre><code>## ── Conflicts ─────────────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()</code></pre>
 <pre class="r"><code>library(stargazer)</code></pre>
@@ -567,10 +567,10 @@ avg_bid &lt;- mean(votes$bid)
 # 4% risk reduction = 1 avoided death
 #solve for bid for 0% risk reduction and 4% risk reduction (0 deaths to 1 death) and look at the difference
 
-zero &lt;- - (intercept + agetofifty + agetoforty + agetosixty + agetothirty + incomeone_percent + incomepoor + incomerich + incomevery_rich + (NEP *avg_NEP) +(risk*0) - avg_vote)/bid
+zero &lt;- - (intercept + agetothirty + incomeone_percent + (NEP *avg_NEP) +(risk*0) - avg_vote)/bid
 
 
-four &lt;- - (intercept + agetofifty + agetoforty + agetosixty + agetothirty + incomeone_percent + incomepoor + incomerich +incomevery_rich + (NEP * avg_NEP) + (risk*4) - avg_vote)/bid
+four &lt;- - (intercept + agetothirty + incomeone_percent + (NEP * avg_NEP) + (risk*4) - avg_vote)/bid
 
 answer &lt;- four - zero
 
@@ -608,12 +608,14 @@ respondent_3 &lt;- (intercept + agetothirty + (NEP * 32) + incomeone_percent + (
 </ol>
 <pre class="r"><code># mean WTP for 60% 
 
-mean_wtp &lt;- (intercept + agetofifty + (NEP * avg_NEP) + (risk*60) - avg_vote)/-bid
+mean_wtp &lt;- (intercept + agetothirty + incomeone_percent + (NEP * avg_NEP) + (risk*60) - avg_vote)/-bid
 
 mean_wtp</code></pre>
 <pre><code>## (Intercept) 
-##    64.47601</code></pre>
+##    82.50273</code></pre>
 <p><em>The mean willingness to pay for a VSR program offering a 60% risk reduction is $64.47</em></p>
+<p><span class="math inline">\(Mean~WTP = \frac{0.12 + Age~to~thirty + Income~one~percent + (NEP \times Average~NEP) + (Risk~reduction \times 60) - Average~vote}{Bid}\)</span></p>
+<p><span class="math inline">\(Mean~WTP =\frac{0.12 + 0.02 + 0.009 + (0.016 \times 38.366) + (0.001 \times 60) - 0.714}{- -0.001}\)</span></p>
 <ol start="5" style="list-style-type: decimal">
 <li>If there are 150,000 households in Santa Barbara County, estimate the total benefit of a VSR program to these households.</li>
 </ol>
@@ -621,11 +623,11 @@ mean_wtp</code></pre>
 
 #each death is worth $2.78 
 
-benefit &lt;- 64.5 * 150000
+benefit &lt;- 82.5 * 150000
 
 benefit</code></pre>
-<pre><code>## [1] 9675000</code></pre>
-<p><em>$9,675,000</em></p>
+<pre><code>## [1] 12375000</code></pre>
+<p><em>$12,375,000</em></p>
 <ol start="6" style="list-style-type: decimal">
 <li>Based only on these benefits, do the benefits of the VSR program outweigh the costs?</li>
 </ol>
@@ -639,7 +641,7 @@ benefit</code></pre>
 <li>Now suppose the carbon credit price is exactly Z*, so all ships voluntarily reduce speed to achieve the 60% risk reduction. Approximately how many whales would be saved by this? What would be the social value of allowing ships to enter the carbon trading market?</li>
 </ol>
 <p><em>15 whales would be saved by this</em></p>
-<p><em>Total benefit of 60% risk reduction = $9,675,000</em></p>
+<p><em>Total benefit of 60% risk reduction = $12,375,000</em></p>
 <p>Additionally, 20 fewer tons of CO2 will be emitted for each ship that crosses the channel</p>
 <ol style="list-style-type: decimal">
 <li>Are we given number of ships? or is the societal benefit only the reduction in whale deaths because the costs of reducing speed exactly outweighs the benefits?</li>

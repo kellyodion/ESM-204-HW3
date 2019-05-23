@@ -157,7 +157,14 @@ mean_wtp
 
 ```
 
+<<<<<<< HEAD
 *The mean willingness to pay for a VSR program offering a 60% risk reduction is $282.52* 
+
+
+  
+$Mean~WTP = \frac{`r round(intercept, digits = 3)` + Age~to~thirty + Income~one~percent + (NEP \times Average~NEP) + (Risk~reduction \times 60) - Average~vote}{Bid}$
+  
+$Mean~WTP =\frac{`r round(intercept, digits = 3)` + `r round(agetothirty, digits = 3)` + `r round(incomeone_percent, digits = 3)` + (`r round(NEP, digits = 3)` \times `r round(avg_NEP, digits = 3)`) + (`r round(risk, digits = 3)` \times 60) - `r round(avg_vote, digits = 3)`}{- `r round(bid, digits = 3)`}$
 
 
 5. If there are 150,000 households in Santa Barbara County, estimate the total benefit of a VSR
@@ -199,7 +206,7 @@ would be the social value of allowing ships to enter the carbon trading market?
 
 *15 whales would be saved by this* 
 
-*Total benefit of 60% risk reduction = $12,375,000* 
+*Total benefit of 60% risk reduction = $42,378,000* 
 
 Additionally, 20 fewer tons of CO2 will be emitted for each ship that crosses the channel 
 
