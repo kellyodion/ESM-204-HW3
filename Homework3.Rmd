@@ -90,10 +90,10 @@ avg_bid <- mean(votes$bid)
 # 4% risk reduction = 1 avoided death
 #solve for bid for 0% risk reduction and 4% risk reduction (0 deaths to 1 death) and look at the difference
 
-zero <- - (intercept + agetothirty + incomeone_percent + (NEP *avg_NEP) +(risk*0) - avg_vote)/bid
+zero <- - (intercept + agetothirty + incomeone_percent + (NEP *avg_NEP) +(risk*0) - 0.5)/bid
 
 
-four <- - (intercept + agetothirty + incomeone_percent + (NEP * avg_NEP) + (risk*4) - avg_vote)/bid
+four <- - (intercept + agetothirty + incomeone_percent + (NEP * avg_NEP) + (risk*4) - 0.5)/bid
 
 answer <- four - zero
 
@@ -121,20 +121,20 @@ Risk = 80, Bid = 40, vote = 1, NEP = 32, age = agetothirty, income = one_percent
 
 #Respondent 1: 
 # Risk = 20, Bid = 80, age = agetothirty, income = very_rich, Vote = 0, NEP = 15; 
-respondent_1 <- (intercept + (agetothirty * 1) + (incomevery_rich *1) + (NEP *15) + (risk * 60) - avg_vote)/bid
+respondent_1 <- (intercept + (agetothirty * 1) + (incomevery_rich *1) + (NEP *15) + (risk * 60) - 0.5)/bid
 
 #Answer = $228.4732
 
 #Repondent 2: 
 #Risk = 40, Bid = 100, vote = 1, NEP = 15, age = agetothirty, income = middle; 
-respondent_2 <- (intercept + agetothirty + (NEP * 15) + (risk * 60) - avg_vote)/bid
+respondent_2 <- (intercept + agetothirty + (NEP * 15) + (risk * 60) - 0.5)/bid
 
 #Answer = $272.2084
 
 #Respondent 3: 
 #Risk = 80, Bid = 40, vote = 1, NEP = 32, age = agetothirty, income = one_percent;
 
-respondent_3 <- (intercept + agetothirty + (NEP * 32) + incomeone_percent + (risk * 60) - 1)/bid
+respondent_3 <- (intercept + agetothirty + (NEP * 32) + incomeone_percent + (risk * 60) - 0.5)/bid
 
 #Answer = $279.205
 
@@ -151,13 +151,13 @@ reduction among Santa Barbara County households.
 ```{r}
 # mean WTP for 60% 
 
-mean_wtp <- (intercept + agetothirty + incomeone_percent + (NEP * avg_NEP) + (risk*60) - avg_vote)/-bid
+mean_wtp <- (intercept + agetothirty + incomeone_percent + (NEP * avg_NEP) + (risk*60) - 0.5)/-bid
 
 mean_wtp
 
 ```
 
-*The mean willingness to pay for a VSR program offering a 60% risk reduction is $64.47* 
+*The mean willingness to pay for a VSR program offering a 60% risk reduction is $282.52* 
 
 
 5. If there are 150,000 households in Santa Barbara County, estimate the total benefit of a VSR
@@ -169,13 +169,13 @@ program to these households.
 
 #each death is worth $2.78 
 
-benefit <- 82.5 * 150000
+benefit <- 282.52 * 150000
 
 benefit
 
 ```
 
-*$12,375,000*
+*$42,378,000*
 
 6. Based only on these benefits, do the benefits of the VSR program outweigh the costs?
 
@@ -204,9 +204,6 @@ would be the social value of allowing ships to enter the carbon trading market?
 Additionally, 20 fewer tons of CO2 will be emitted for each ship that crosses the channel 
 
 1. Are we given number of ships? or is the societal benefit only the reduction in whale deaths because the costs of reducing speed exactly outweighs the benefits? 
-
-
-
 
 
 
